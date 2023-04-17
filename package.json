@@ -12,7 +12,9 @@
   "author": "azanniel",
   "license": "MIT",
   "dependencies": {
-    "fastify": "4.15.0"
+    "dotenv": "16.0.3",
+    "fastify": "4.15.0",
+    "zod": "3.21.4"
   },
   "devDependencies": {
     "@types/node": "18.15.11",
