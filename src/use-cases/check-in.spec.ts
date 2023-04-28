@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository'
 import { CheckInUseCase } from './check-in'
 import { InMemoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository'
-import { Decimal } from '@prisma/client/runtime'
+import { Decimal } from '@prisma/client/runtime/library'
 
 let checkInsRepository: InMemoryCheckInsRepository
 let gymsRepository: InMemoryGymsRepository
@@ -19,8 +19,8 @@ describe('Authenticate use case', () => {
       title: 'Javascript Gym',
       description: '',
       phone: '',
-      latitude: new Decimal(0),
-      longitude: new Decimal(0),
+      latitude: new Decimal(-3.0408275),
+      longitude: new Decimal(-59.9912634),
     })
 
     vi.useFakeTimers()
@@ -81,5 +81,25 @@ describe('Authenticate use case', () => {
     })
 
     expect(checkIn.id).toEqual(expect.any(String))
+  })
+
+  it('should not be able to check in on distante gym', async () => {
+    gymsRepository.items.push({
+      id: 'gym-02',
+      title: 'Typescript Gym',
+      description: '',
+      phone: '',
+      latitude: new Decimal(-3.088725),
+      longitude: new Decimal(-59.931078),
+    })
+
+    await expect(() =>
+      sut.execute({
+        gymId: 'gym-02',
+        userId: 'user-01',
+        userLatitude: -3.0408275,
+        userLongitude: -59.9912634,
+      }),
+    ).rejects.toBeInstanceOf(Error)
   })
 })

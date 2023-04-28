@@ -24,7 +24,7 @@ São caminhos que cada requisito pode tomar. Uma regra de negócio sempre vai es
 
 - [x] O usuário não deve poder se cadastrar com um e-mail duplicado;
 - [x] O usuário não pode fazer dois check-ins no mesmo dia;
-- [ ] O usuário não pode fazer check-in se não estiver perto 100 metros da academia;
+- [x] O usuário não pode fazer check-in se não estiver perto 100 metros da academia;
 - [ ] O check-in só pode ser validado até 20 minutos após ser criado;
 - [ ] O check-in só pode ser validado por administradores;
 - [ ] A academia só pode ser cadastrada por administradores;
