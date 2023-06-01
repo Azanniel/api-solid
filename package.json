@@ -4,8 +4,8 @@
   "description": "GymPass style app - Obtendo acesso à academias associadas ao planos para praticar exercícios físicos",
   "main": "index.js",
   "scripts": {
-    "start:dev": "tsx watch src/server.ts",
     "start": "node build/server.js",
+    "start:dev": "tsx watch src/server.ts",
     "build": "tsup src --out-dir build",
     "test": "vitest run --dir src/use-cases",
     "test:watch": "vitest --dir src/use-cases",
@@ -21,6 +21,7 @@
   "author": "azanniel",
   "license": "MIT",
   "dependencies": {
+    "@fastify/cookie": "8.3.0",
     "@fastify/jwt": "6.7.1",
     "@prisma/client": "4.13.0",
     "bcryptjs": "2.4.3",
