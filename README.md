@@ -1,4 +1,4 @@
-# Projeto a ser desenvolvido
+# Projeto Desenvolvido
 
 GymPass style app
 Obtendo acesso à academias associadas ao planos para praticar exercícios físicos
