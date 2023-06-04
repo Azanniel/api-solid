@@ -1,6 +1,13 @@
 name: Run Unit Tests
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    types: [opened]
+    branches:
+      - '**'
 
 jobs:
   run-unit-tests:
