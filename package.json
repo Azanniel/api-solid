@@ -29,7 +29,7 @@
     "dayjs": "1.11.7",
     "dotenv": "16.0.3",
     "fastify": "4.15.0",
-    "zod": "3.21.4"
+    "zod": "3.22.3"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "1.2.0",
